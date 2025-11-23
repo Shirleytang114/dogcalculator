@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>狗狗年齡計算機</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="overlay">
+        <div class="calculator-card">
+            <header>
+                <h1>狗狗年齡計算機</h1>
+                <p>根據 AKC 標準，換算狗狗的人類年齡</p>
+            </header>
+
+            <main>
+                <div class="input-group">
+                    <label>請選擇狗狗出生年月日：</label>
+                    <div class="date-selectors">
+                        <div class="select-box">
+                            <select id="dob-year">
+                                <option value="">年</option>
+                                </select>
+                            <span class="custom-arrow"></span>
+                        </div>
+                        <div class="select-box">
+                            <select id="dob-month">
+                                <option value="">月</option>
+                                </select>
+                            <span class="custom-arrow"></span>
+                        </div>
+                        <div class="select-box">
+                            <select id="dob-day">
+                                <option value="">日</option>
+                                </select>
+                            <span class="custom-arrow"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="calculate-btn">開始計算</button>
+
+                <div id="result-area" class="hidden">
+                    <h2>計算結果</h2>
+                    <p class="dog-actual-age">狗狗實際年齡：<span id="dog-years-display">0</span> 歲</p>
+                    <div class="human-age-result">
+                        <p>約等於人類</p>
+                        <p class="highlight-age"><span id="human-years-display">0</span> 歲</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

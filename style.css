@@ -1,0 +1,179 @@
+/* 全局設定 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif; /* 如果沒有引入 Google Fonts，會退回到系統無襯線字體 */
+    min-height: 100vh;
+    /* 設定背景圖片 */
+    background-image: url('https://photo.518.com.tw/selfmedia/articles/1281/162734916362443.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 遮罩層：增加背景暗度，提升文字可讀性 */
+.overlay {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4); /* 半透明黑色 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* 計算機主卡片 */
+.calculator-card {
+    background-color: rgba(255, 255, 255, 0.95); /* 微透明白色背景 */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    backdrop-filter: blur(5px); /* 背景模糊效果 (支援的瀏覽器) */
+}
+
+header h1 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+header p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+}
+
+/* 輸入區域樣式 */
+.input-group label {
+    display: block;
+    text-align: left;
+    color: #555;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.date-selectors {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+/* 自定義下拉選單樣式 */
+.select-box {
+    position: relative;
+    flex: 1; /* 讓三個選單平均分配寬度 */
+}
+
+.select-box select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    appearance: none; /* 隱藏原生箭頭 */
+    -webkit-appearance: none;
+    background-color: white;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.select-box select:focus {
+    outline: none;
+    border-color: #e67e22; /* 聚焦時的顏色 (橘色) */
+}
+
+/* 自定義箭頭 */
+.custom-arrow {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 0; 
+    height: 0; 
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #555;
+    pointer-events: none;
+}
+
+/* 按鈕樣式 */
+#calculate-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #e67e22; /* 溫暖的橘色，搭配背景柴犬 */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+#calculate-btn:hover {
+    background-color: #d35400;
+}
+
+#calculate-btn:active {
+    transform: scale(0.98);
+}
+
+/* 結果顯示區域 */
+#result-area {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+#result-area h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.dog-actual-age {
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.human-age-result p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.highlight-age {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #e67e22;
+    margin-top: 5px;
+}
+
+/* 動畫效果 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 響應式調整 */
+@media (max-width: 400px) {
+    .date-selectors {
+        flex-direction: column;
+    }
+    .highlight-age {
+        font-size: 2rem;
+    }
+}
